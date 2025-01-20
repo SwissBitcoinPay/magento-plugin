@@ -78,15 +78,16 @@ class Redirect extends Action
                 $this->quoteRepository->save($quote);
             }
                 
+            $store = $this->_storeManager->getStore();
             $paymentData = [
-                'Description' => 'From ' . $this->_storeManager->getStore()->getName(),
+                'Description' => 'From ' . $store->getName(),
                 'BuyerName' => $buyerName,
                 'CartID' => $post['quote_id'],
                 'CurrencyCode' => $post['currency'],
                 'Amount' => $post['amount'],
                 'BuyerEmail' => $buyerEmail,
-                'Lang' => 'fr',
-                'RedirectionURL' => $this->_url->getUrl('checkout/onepage/success'),
+                'Lang' => $store->getLocaleCode(),
+                'RedirectionURL' => $this->_url->getUrl(''),
                 'WebHookURL' => $this->_url->getUrl('sbppayment/payment/callback')
             ];
 
