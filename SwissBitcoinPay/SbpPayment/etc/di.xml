@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="SwissBitcoinPay\SbpPayment\Controller\Payment\Redirect">
+        <arguments>
+            <argument name="logger" xsi:type="object">SbpPaymentLogger</argument>
+        </arguments>
+    </type>
+    
+    <virtualType name="SbpPaymentLogger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="name" xsi:type="string">SbpPayment</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="system" xsi:type="object">SbpPaymentLogHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    
+    <virtualType name="SbpPaymentLogHandler" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/sbp_payment.log</argument>
+        </arguments>
+    </virtualType>
+</config>

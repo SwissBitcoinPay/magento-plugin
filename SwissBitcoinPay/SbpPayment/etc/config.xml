@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/config.xsd">
+    <default>
+        <payment>
+            <sbp_payment>
+                <active>1</active>
+                <model>SwissBitcoinPay\SbpPayment\Model\PaymentMethod</model>
+                <title>Swiss Bitcoin Pay</title>
+                <order_status>pending</order_status>
+                <payment_action>authorize</payment_action>
+                <allowspecific>0</allowspecific>
+                <group>Online</group>
+            </sbp_payment>
+        </payment>
+    </default>
+</config>
