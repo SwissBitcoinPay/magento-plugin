@@ -1,25 +1,24 @@
 {
-    "name": "SwissBitcoinPay/sbp-payment",
-    "description": "Module de paiement Swiss Bitcoin Pay",
-    "type": "magento2-module",
-    "version": "1.0.0",
-    "license": [
-        "OSL-3.0",
-        "AFL-3.0"
+  "name": "swissbitcoinpay/sbp-payment",
+  "description": "Swiss Bitcoin Pay Payment module",
+  "type": "magento2-module",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "require": {
+    "php": "~7.4.0||~8.1.0",
+    "magento/framework": "103.0.*",
+    "magento/module-sales": "103.0.*",
+    "magento/module-checkout": "100.4.*",
+    "magento/module-payment": "100.4.*"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
     ],
-    "require": {
-        "php": "~7.4.0||~8.1.0",
-        "magento/framework": "103.0.*",
-        "magento/module-sales": "103.0.*",
-        "magento/module-checkout": "100.4.*",
-        "magento/module-payment": "100.4.*"
-    },
-    "autoload": {
-        "files": [
-            "registration.php"
-        ],
-        "psr-4": {
-            "SwissBitcoinPay\\SbpPayment\\": ""
-        }
+    "psr-4": {
+      "SwissBitcoinPay\\SbpPayment\\": ""
     }
+  }
 }

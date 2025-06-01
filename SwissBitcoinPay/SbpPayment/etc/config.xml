@@ -5,6 +5,8 @@
         <payment>
             <sbp_payment>
                 <active>1</active>
+                <api_url>https://api.swiss-bitcoin-pay.ch</api_url>
+                <accept_onchain_payments>1</accept_onchain_payments>
                 <model>SwissBitcoinPay\SbpPayment\Model\PaymentMethod</model>
                 <title>Swiss Bitcoin Pay</title>
                 <order_status>pending</order_status>
